@@ -11,7 +11,7 @@ import (
 	"sync"
 )
 
-// a sql command withe the argumenst
+// a sql command with the argumenst
 type clause struct {
 	condition string
 	args      []interface{}
@@ -58,7 +58,7 @@ func Open(dbAdopter, dbConnection string) (*SQL, error) {
 	return nil, errors.New("unsupported  databse ")
 }
 
-//DB returns the undelying Database connection.
+//DB returns the underlying Database connection.
 func (s *SQL) DB() *sql.DB {
 	return s.db
 }
@@ -137,7 +137,7 @@ func (s *SQL) Automigrate() error {
 	return nil
 }
 
-//Copy retunrs a new copy of s. It is used for effective method chaining to
+//Copy returns a new copy of s. It is used for effective method chaining to
 //avoid messing up the scope.
 func (s *SQL) Copy() *SQL {
 	return &SQL{
