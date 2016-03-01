@@ -1,5 +1,5 @@
 # Orange [![GoDoc](https://godoc.org/github.com/gernest/orange?status.svg)](https://godoc.org/github.com/gernest/orange)[![Coverage Status](https://coveralls.io/repos/github/gernest/orange/badge.svg?branch=master)](https://coveralls.io/github/gernest/orange?branch=master)
-
+[![Build Status](https://travis-ci.org/gernest/orange.svg?branch=master)](https://travis-ci.org/gernest/orange)
 
 Orange is a lightweight, simple Object relational Mapper for Golang. Built  for
 the curious minds which wants to grok how to remove the toil when building
