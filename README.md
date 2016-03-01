@@ -1,4 +1,4 @@
-# Orange
+# Orange [![GoDoc](https://godoc.org/github.com/gernest/orange?status.svg)](https://godoc.org/github.com/gernest/orange)
 
 Orange is a lightweight, simple Object relational Mapper for Golang. Built  for
 the curious minds which wants to grok how to remove the toil when building
@@ -70,7 +70,7 @@ eat more orange for their healthy)
 # Usage
 
 The following is a simple example to showcase the power of orange, for
-comprehensive API please check [ The Orange Documentation]()
+comprehensive API please check [ The Orange Documentation](https://godoc.org/github.com/gernest/orange)
 
 ```go
 package orange_test
