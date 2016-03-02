@@ -24,37 +24,6 @@ THIS IS NOT FOR PRODUCTION USE, unless you know what you are doing in which case
 your contribution is welcome.
 
 
-# Why another ORM?
-
-
-* More options: There are already good ORM's for Go, so adding another option is
-a good thing to the community. Some people might find orange suits their needs.
-
-
-# Why Orange?
-
-* For the knowledge: If you are curious and would like to know the kicks of the
-dynamics behind Object Relation Mapping in Go then orange is for you. The code is
-DRY, clean, well tested and easy to grok. I know It will grow over time but I
-hope this premise will still hold.
-
-* Small overhead: Orange is a honest bookkeeper, there is no need any new
-paradigm, new conventions or anything. Just you and your Golang objects.
-
-* Hackable: You can use orange as the base for your bookkeeping shelf, change
- the code to suit your needs without breaking anything.
-
-# Do you need to use Orange?
-
-Probably not, it was meant for educational use.Mainly to have a projects where 
-people who are new to Go, or hobbyists looking for a project that they can contribute
-to, experiment on and maybe build their next big thing on it.
-
-If you ever want to harness the power of your database, take your time to learn more
-about SQL. My time while developing Orange made me realize how powerful SQL is and it
-was an eye opener to see the beauty of postgres. Now I know SQL, the golang's 
-standard `database/sql` package is all what I need. To remove boilerplate code
-I suggest you understand the problem you want to solve and use common sense. 
 
 # Installation
 
@@ -62,11 +31,6 @@ I suggest you understand the problem you want to solve and use common sense.
 go get github.com/gernest/orange
 ```
 
-# Warning
-Orange is not matured yet, a lot of features are missing or might be incomplete
-, but you can help out by
-suggesting features and maybe submitting PR too( I will be happy to  see people
-eat more orange for their healthy)
 
 # Usage
 
