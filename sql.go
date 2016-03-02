@@ -255,7 +255,7 @@ func (s *SQL) Limit(condition int) *SQL {
 
 // Count adds COUNT statement, colum is the column name that you want to
 // count. It is up to the caller to provide a single value to bind to( in which
-// the tal count will be writen to.
+// the tal count will be written to.
 //
 //	var total int64
 // 	db.Select(&user{}).Count"id").Bind(&total)
@@ -280,7 +280,7 @@ func (s *SQL) Offset(condition int) *SQL {
 }
 
 //Select adds SELECT clause. No query is executed by this method, only the call
-//for *SQL.Bind will excute the built query( with exeptions of the wrapers for
+//for *SQL.Bind will excute the built query( with exceptions of the wrappers for
 //database/sql package)
 //
 // query can be a model or a string. Only when query is a string will the args
