@@ -593,6 +593,7 @@ func (s *SQL) creare(model interface{}) (string, error) {
 	return buf.String(), nil
 }
 
+//createValues returns values for creating a new record
 func createValues(t Table, v interface{}) (cols []string, vals []interface{}, err error) {
 	f, err := t.Fields()
 	if err != nil {
