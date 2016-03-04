@@ -12,6 +12,7 @@ database facing applications.
 * Multiple database support( currently only postgresql but mysql and sqlite are
 work in progress)
 * Zero dependency( only the standard libary)
+* Simple SQL query building API
 
 # Motivation
 This is my understanding of Object Relational Mapping with Golang. Instead of
