@@ -18,7 +18,7 @@ writing a blog post, I took the liberty to implement `orange`. It has almost all
 the things you might need to interact with databases with Golang.
 
 The source code is geared toward people who want to harness the power of Go.
-There is alot of myths around reflections in Go, I have almost used all the
+There is a lot of myths around reflections in Go, I have almost used all the
 techniques you will need to master reflections.
 
 THIS IS NOT FOR PRODUCTION USE, unless you know what you are doing in which case
