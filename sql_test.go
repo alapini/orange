@@ -6,6 +6,7 @@ import (
 	"reflect"
 	"strings"
 	"testing"
+	"time"
 
 	_ "github.com/lib/pq"
 )
@@ -30,8 +31,10 @@ func TestOpen(t *testing.T) {
 }
 
 type golangster struct {
-	ID   int64
-	Name string
+	ID        int64
+	Name      string
+	CreatedAt time.Time
+	UpdatedAt time.Time
 }
 
 func TestSQL_Register(t *testing.T) {
@@ -199,14 +202,6 @@ func TestSQL_Create(t *testing.T) {
 		t.Fatal(err)
 	}
 	_ = db.Register(&golangster{})
-	query, err := db.creare(&golangster{ID: 2, Name: "gernest"})
-	if err != nil {
-		t.Fatal(err)
-	}
-	expect := "INSERT INTO golangster (ID, Name) VALUES (2, 'gernest');"
-	if query != expect {
-		t.Errorf("expected %s got %s", expect, query)
-	}
 	_ = db.Automigrate()
 
 	// create an actual entry

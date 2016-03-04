@@ -9,6 +9,7 @@ import (
 	"reflect"
 	"strings"
 	"sync"
+	"time"
 )
 
 // a sql command with the argumenst
@@ -563,7 +564,7 @@ func (s *SQL) creare(model interface{}) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	cols, vals, err := Values(t, model)
+	cols, vals, err := createValues(t, model)
 	if err != nil {
 		return "", err
 	}
@@ -590,6 +591,44 @@ func (s *SQL) creare(model interface{}) (string, error) {
 	}
 	_, _ = buf.WriteString(");")
 	return buf.String(), nil
+}
+
+func createValues(t Table, v interface{}) (cols []string, vals []interface{}, err error) {
+	f, err := t.Fields()
+	if err != nil {
+		return
+	}
+	value := reflect.ValueOf(v)
+	if value.Kind() == reflect.Ptr {
+		value = value.Elem()
+	}
+	for _, field := range f {
+		fv := value.FieldByName(field.Name())
+		if fv.IsValid() {
+			zero := reflect.Zero(fv.Type())
+			if reflect.DeepEqual(zero.Interface(), fv.Interface()) {
+				cn := tabulizeName(field.Name())
+				if cn == "created_at" || cn == "updated_at" {
+					cols = append(cols, field.Name())
+					vals = append(vals, time.Now().Format(time.RFC3339))
+				}
+				continue
+			}
+			colName := field.Name()
+			tags, _ := field.Flags()
+			if tags != nil {
+				for _, tag := range tags {
+					if tag.Name() == "field_name" {
+						colName = tag.Value()
+						break
+					}
+				}
+			}
+			cols = append(cols, colName)
+			vals = append(vals, fv.Interface())
+		}
+	}
+	return
 }
 
 //Update updates a model values into the database

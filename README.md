@@ -105,7 +105,6 @@ These  are some of the  things I will hope to add when I get time
 * Delete record
 * Support mysql
 * support sqlite
-* polish support for timestamps
 * more comprehensive tests
 * improve perfomace
 * talk about orange
