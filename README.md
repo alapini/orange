@@ -8,7 +8,7 @@ Orange is a lightweight, simple Object relational Mapper for Golang. Orange offe
 * Auto migrations
 * Multiple database support( currently only postgresql but mysql and sqlite are
 work in progress)
-* Zero dependency( only the standard libary)
+* Zero dependency( only the standard library)
 * Simple SQL query building API
 
 # Motivation
