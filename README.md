@@ -7,6 +7,7 @@ database facing applications.
 
 # Features
 * Simple API 
+* Fast
 * Auto migrations
 * Multiple database support( currently only postgresql but mysql and sqlite are
 work in progress)
