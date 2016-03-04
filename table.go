@@ -114,6 +114,9 @@ func tabulizeName(name string) string {
 	if name == "" {
 		return ""
 	}
+	if strings.ToLower(name) == "id" {
+		return "id"
+	}
 	isFirstLower := false
 	var capIndex []int
 	for i, ch := range name {

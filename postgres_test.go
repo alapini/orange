@@ -22,7 +22,7 @@ func TestPostgres_Create(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	expect := "CREATE TABLE IF NOT EXISTS postgres_test (ID serial,Body text,CreatedAt timestamp with time zone,UpdatedAt timestamp with time zone);"
+	expect := "CREATE TABLE IF NOT EXISTS postgres_test (id serial,body text,created_at timestamp with time zone,updated_at timestamp with time zone);"
 	if create != expect {
 		t.Errorf("expected %s got %s", expect, create)
 	}

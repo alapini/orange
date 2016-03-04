@@ -607,23 +607,13 @@ func createValues(t Table, v interface{}) (cols []string, vals []interface{}, er
 		fv := value.FieldByName(field.Name())
 		if fv.IsValid() {
 			zero := reflect.Zero(fv.Type())
+			colName := field.ColumnName()
 			if reflect.DeepEqual(zero.Interface(), fv.Interface()) {
-				cn := tabulizeName(field.Name())
-				if cn == "created_at" || cn == "updated_at" {
-					cols = append(cols, field.Name())
+				if colName == "created_at" || colName == "updated_at" {
+					cols = append(cols, colName)
 					vals = append(vals, time.Now().Format(time.RFC3339))
 				}
 				continue
-			}
-			colName := field.Name()
-			tags, _ := field.Flags()
-			if tags != nil {
-				for _, tag := range tags {
-					if tag.Name() == "field_name" {
-						colName = tag.Value()
-						break
-					}
-				}
 			}
 			cols = append(cols, colName)
 			vals = append(vals, fv.Interface())

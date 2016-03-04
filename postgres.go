@@ -43,13 +43,7 @@ func (p *postgresql) Drop(t Table) (string, error) {
 // Field returns sql representation of field f..
 func (p *postgresql) Field(f Field) (string, error) {
 	buf := &bytes.Buffer{}
-	fName := f.Name()
-	t, _ := f.Flags()
-	for _, v := range t {
-		if v.Name() == "field_name" {
-			fName = v.Value()
-		}
-	}
+	fName := f.ColumnName()
 	_, _ = buf.WriteString(fName + " ")
 	var details string
 	switch f.Type().Kind() {
