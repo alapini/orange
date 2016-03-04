@@ -51,6 +51,9 @@ type Field interface {
 	Name() string
 	Type() reflect.Type
 	Flags() ([]Flag, error)
+
+	//ColumnName is the name that this field is represented in the database table
+	ColumnName() string
 }
 
 //Flag is an interface for tagging objects. This can hold additional information
@@ -254,6 +257,15 @@ func (f *field) Flags() ([]Flag, error) {
 
 func (f *field) SetValue(v interface{}) error {
 	return nil
+}
+
+func (f *field) ColumnName() string {
+	for _, v := range f.tags {
+		if v.name == "field_name" {
+			return v.value
+		}
+	}
+	return tabulizeName(f.name)
 }
 
 func (f *field) loadTags(sqlTags string) {
