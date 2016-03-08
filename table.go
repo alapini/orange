@@ -12,7 +12,7 @@ var (
 	//ErrNoField is returned when the field is not found
 	ErrNoField = errors.New("no field found")
 
-	//ErrNoFlag is returned when the field is not found
+	//ErrNoFlag is returned when the flag is not found
 	ErrNoFlag   = errors.New("no flag found")
 	specialTags = struct {
 		fieldName, fieldType, relation string
